@@ -1,6 +1,6 @@
 package ua.lviv.iot.algo.part1.lab5;
 
-
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -21,13 +21,13 @@ public class Address {
         return text;
     }
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         System.out.print("Write your text or write 'stop' to stop program: \n\n");
-        while(true) {
+        while(true){
             Address address = new Address();
-            Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
             String text = scanner.nextLine();
-            if(Objects.equals(text, "stop")){
+            if(Objects.equals(text, "stop")) {
                 break;
             }
             System.out.println(address.replaceToAddress(text+"\n-------------------------------------------------------------------"));
